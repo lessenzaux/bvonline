@@ -1,0 +1,24 @@
+extends layout
+
+block content
+  // TELA 1: ÍNDICE (O Mapa do Conhecimento)
+  section.molecule-index-container
+    header.atom-index-header
+      h2.atom-subtitle Sumário Executivo
+      p.atom-description Selecione o portal do conhecimento para iniciar o Svadhyaya.
+
+    nav.molecule-chapter-list
+      if capitulos && capitulos.length > 0
+        each cap in capitulos
+          a.atom-chapter-link(href=`/capitulo/${cap.numero}`)
+            span.cap-number= String(cap.numero).padStart(2, '0')
+            span.cap-title= cap.titulo
+            // Ícone sutil de indicação (Seta técnica)
+            svg(viewBox="0 0 24 24" width="18" height="18")
+              path(d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z" fill="currentColor")
+      else
+        .atom-empty-state
+          p A densidade ainda não foi processada. O crawler está em vigília...
+
+    footer.atom-index-footer
+      span.status-tag Sincronizado com MongoDB

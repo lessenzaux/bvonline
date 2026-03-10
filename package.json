@@ -1,0 +1,31 @@
+{
+  "name": "santuario-svadhyaya",
+  "version": "1.0.0",
+  "description": "Bloco de notas digital com assistente de estudos (Lucce 4.0)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "gulp",
+    "build": "sass scss/main.scss public/css/main.css --style=compressed --no-source-map"
+  },
+  "author": "Kali e Darlon Brambilla",
+  "license": "ISC",
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "compression": "^1.8.1",
+    "cors": "^2.8.6",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "helmet": "^7.2.0",
+    "mongoose": "^8.0.3",
+    "node-fetch": "^2.7.0",
+    "pug": "^3.0.2"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.29.3",
+    "gulp": "^4.0.2",
+    "gulp-sass": "^5.1.0",
+    "nodemon": "^3.0.2",
+    "sass": "^1.69.5"
+  }
+}

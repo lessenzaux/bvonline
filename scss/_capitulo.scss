@@ -1,0 +1,80 @@
+// public/css/modules/_capitulo.scss
+
+.molecule-chapter-container {
+    padding-bottom: 80px; // Espaço para não bater no input do Oráculo
+  }
+  
+  .atom-chapter-header {
+    margin-bottom: 32px;
+    
+    .atom-btn-back {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      color: $cor-tinta-bic;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      opacity: 0.6;
+    }
+  
+    .atom-title-large {
+      font-size: 2.2rem;
+      font-weight: 300;
+      color: $cor-tinta-bic;
+    }
+  }
+  
+  .molecule-verse-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 1px; // Cria a linha de separação técnica
+    background-color: rgba($cor-tinta-bic, 0.08);
+  
+    .atom-verse-card {
+      background-color: $cor-papel-organico;
+      padding: 24px;
+      display: flex;
+      gap: 20px;
+      text-decoration: none;
+      color: $cor-tinta-bic;
+      transition: background 0.4s $transicao-fluida;
+  
+      &:active {
+        background-color: $cor-ia-fundo;
+      }
+  
+      .verse-identity {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-width: 40px;
+        
+        .label-v { font-size: 0.6rem; font-weight: 800; opacity: 0.3; }
+        .value-v { font-size: 1.2rem; font-weight: 600; }
+      }
+  
+      .verse-preview {
+        flex: 1;
+        .text-sanskrit {
+          font-size: 0.95rem;
+          font-style: italic;
+          margin-bottom: 4px;
+          opacity: 0.8;
+        }
+        .text-translation-preview {
+          font-size: 1rem;
+          line-height: 1.4;
+          font-weight: 400;
+        }
+      }
+      
+      .atom-indicator-lucce {
+        display: flex;
+        align-items: center;
+        opacity: 0.2;
+      }
+    }
+  }

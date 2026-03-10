@@ -1,0 +1,16 @@
+doctype html
+html(lang="pt-BR")
+  head
+    include includes/head.pug
+  body.santuario-mobile
+    header.molecule-topbar
+      // O Tilaka invoca a Lucce em qualquer tela
+      button#btn-invocar-oraculo.atom-btn-tilaka
+        img(src="/img/tilaka.png" width="30")
+      h1.atom-title BVonline
+    
+    main#canvas-estudo.organism-editor
+      block content
+
+    include includes/oraculo-panel.pug
+    script(type="module" src="/js/ui.js")

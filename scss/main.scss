@@ -1,0 +1,133 @@
+// ==========================================
+// 1. A ALQUIMIA DAS VARIÁVEIS (Vajra Edition)
+// ==========================================
+$cor-tinta-bic: #001C7A; 
+$cor-papel-organico: #F9F8F6; 
+$cor-sombra: rgba(0, 28, 122, 0.12); 
+$cor-ia-fundo: rgba(0, 28, 122, 0.04);
+$radius-vajra: 0px; // A precisão absoluta da lâmina
+$transicao-fluida: 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+
+// ==========================================
+// 2. FUNDAÇÃO
+// ==========================================
+* {
+  margin: 0; padding: 0; box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body.santuario-mobile {
+  background-color: $cor-papel-organico;
+  color: $cor-tinta-bic;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  height: 100vh; width: 100vw; overflow: hidden;
+  display: flex; flex-direction: column;
+}
+
+// ==========================================
+// 3. ORGANISMO 1: O CANVAS DE REGISTO
+// ==========================================
+.organism-editor {
+  flex: 1; display: flex; flex-direction: column; padding: 24px;
+  transition: filter $transicao-fluida, opacity $transicao-fluida;
+  
+  &.desfocado {
+    filter: blur(8px); opacity: 0.4; pointer-events: none;
+  }
+}
+
+.molecule-topbar {
+  display: flex;
+  flex-direction: row; // Mantém a ordem natural
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.atom-btn-icon {
+  background: transparent; border: none; color: $cor-tinta-bic;
+  cursor: pointer; padding: 4px; transition: transform 0.3s ease;
+  // Representação do Tilaka à esquerda
+  &:active { transform: scale(0.9); }
+}
+
+.atom-title {
+  font-size: 0.85rem; font-weight: 600; letter-spacing: 3px;
+  text-transform: uppercase; opacity: 0.5;
+}
+
+.molecule-editor-area {
+  flex: 1; display: flex; flex-direction: column;
+  .atom-input-title {
+    border: none; background: transparent; font-size: 0.6rem;
+    font-weight: 300; color: $cor-tinta-bic; margin-bottom: 16px;
+    outline: none; &::placeholder { opacity: 0.2; }
+  }
+  .atom-textarea-content {
+    flex: 1; border: none; background: transparent; font-size: 1.15rem;
+    line-height: 1.4; color: rgba($cor-tinta-bic, 0.9);
+    resize: none; outline: none; &::placeholder { opacity: 0.2; }
+  }
+}
+
+// ==========================================
+// 4. ORGANISMO 2: O ORÁCULO (LUCCE 4.0)
+// ==========================================
+.organism-assistant {
+  position: absolute; bottom: 0; left: 0; width: 100%; height: 85vh;
+  background: white; border-radius: $radius-vajra;
+  box-shadow: 0 -20px 50px $cor-sombra;
+  display: flex; flex-direction: column;
+  transition: transform $transicao-fluida; z-index: 10;
+  border-top: 1px solid rgba($cor-tinta-bic, 0.1);
+  
+  &.recolhido { transform: translateY(100%); }
+}
+
+.molecule-assistant-header {
+  padding: 20px 24px; display: flex; justify-content: space-between;
+  align-items: center; border-bottom: 1px solid rgba($cor-tinta-bic, 0.05);
+  .atom-subtitle { font-size: 0.4rem; font-weight: 200; letter-spacing: 1px; }
+  .atom-btn-text { 
+    background: transparent; border: none; color: $cor-tinta-bic;
+    font-size: 0.4rem; font-weight: 700; text-transform: uppercase; opacity: 0.5;
+  }
+}
+
+.molecule-chat-history {
+  flex: 1; padding: 24px; overflow-y: auto;
+  display: flex; flex-direction: column; gap: 20px;
+}
+
+.atom-chat-bubble {
+  padding: 14px 18px; font-size: 0.6rem; line-height: 1.6;
+  border-radius: $radius-vajra; max-width: 88%;
+  animation: fadeIn 0.5s ease forwards;
+
+  &.ia-bubble {
+    align-self: flex-start; background: $cor-ia-fundo;
+    border-left: 3px solid $cor-tinta-bic;
+  }
+  &.user-bubble {
+    align-self: flex-end; background: $cor-tinta-bic;
+    color: white; border: none;
+  }
+}
+
+.molecule-chat-input {
+  padding: 16px 24px 40px 24px; display: flex; gap: 12px; background: white;
+  .atom-input-chat {
+    flex: 1; padding: 14px; border-radius: $radius-vajra;
+    border: 1px solid rgba($cor-tinta-bic, 0.1); background: $cor-papel-organico;
+    font-size: 1rem; outline: none;
+  }
+  .atom-btn-send {
+    background: $cor-tinta-bic; color: white; border: none;
+    padding: 0 20px; border-radius: $radius-vajra; font-weight: 600;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}

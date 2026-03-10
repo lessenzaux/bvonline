@@ -1,0 +1,97 @@
+// public/css/modules/_verso-detalhe.scss
+
+.molecule-verse-detail {
+  padding: 0 4px 100px 4px; // Espaço para não ser coberto pelo Oráculo
+}
+
+.atom-verse-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  
+  .atom-btn-back {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: $cor-tinta-bic;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    opacity: 0.5;
+  }
+
+  .atom-verse-id {
+    background: $cor-tinta-bic;
+    color: white;
+    padding: 4px 12px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+}
+
+.organism-shastra-content {
+  .molecule-sanskrit-area {
+    margin-bottom: 32px;
+    text-align: center;
+
+    .atom-text-sanskrit {
+      font-size: 1.8rem;
+      font-weight: 500;
+      line-height: 1.4;
+      margin-bottom: 16px;
+      color: $cor-tinta-bic;
+    }
+
+    .atom-text-transliteration {
+      font-size: 1.1rem;
+      font-style: italic;
+      opacity: 0.7;
+      line-height: 1.6;
+    }
+  }
+
+  .atom-divider-vajra {
+    border: none;
+    border-top: 1px solid rgba($cor-tinta-bic, 0.1);
+    margin: 40px auto;
+    width: 60px;
+  }
+
+  .molecule-translation-area {
+    margin-bottom: 48px;
+    .atom-text-synonyms {
+      font-size: 0.9rem;
+      margin-bottom: 24px;
+      opacity: 0.6;
+      line-height: 1.6;
+      text-align: justify;
+    }
+    .atom-text-translation {
+      font-size: 1.25rem;
+      font-weight: 500;
+      line-height: 1.7;
+      color: $cor-tinta-bic;
+    }
+  }
+
+  .molecule-purport-area {
+    .atom-subtitle-purport {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 24px;
+      opacity: 0.4;
+    }
+    .atom-content-purport {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: rgba($cor-tinta-bic, 0.85);
+      text-align: justify;
+      
+      p { margin-bottom: 20px; }
+    }
+  }
+}

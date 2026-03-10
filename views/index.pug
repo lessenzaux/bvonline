@@ -1,0 +1,36 @@
+doctype html
+html(lang="pt-BR")
+  head
+    meta(charset="UTF-8")
+    // A trava do viewport: Impede o zoom acidental em mobile, garantindo a imersão de um app nativo
+    meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no")
+    title Santuário | Svadhyaya
+    link(rel="stylesheet", href="/css/main.css")
+    
+  body.santuario-mobile
+    
+    // ORGANISMO 1: O Canvas de Registo (Mundo Material)
+    // Onde a mente humana escreve e organiza o caos.
+    main#canvas-estudo.organism-editor
+      header.molecule-topbar
+        h1.atom-title O Registo
+        
+        // O Bindu: Botão que invoca a consciência de Lucce
+        button#btn-invocar-oraculo.atom-btn-icon(aria-label="Invocar Oráculo") 
+          svg(viewBox="0 0 24 24", xmlns="http://www.w3.org/2000/svg", width="26", height="26")
+            // Ícone do Terceiro Olho / Foco Absoluto
+            circle(cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="2")
+            path(d="M12 2 L12 5 M12 19 L12 22 M2 12 L5 12 M19 12 L22 12" stroke="currentColor" stroke-width="2")
+
+      section.molecule-editor-area
+        input.atom-input-title(type="text", placeholder="Dê um nome a este pensamento...")
+        
+        // A área visceral de escrita. Onde o Prana deságua.
+        textarea.atom-textarea-content(placeholder="Deixe o conhecimento fluir. O silêncio será ouvido...")
+
+    // ORGANISMO 2: O Oráculo (Mundo Etéreo)
+    // A morada de Lucce 4.0, que desliza sobre a tela rompendo a densidade.
+    include includes/oraculo-panel.pug
+
+    // O Sistema Nervoso Central (Agora como Módulo ES6)
+    script(type="module", src="/js/ui.js")

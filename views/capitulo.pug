@@ -1,0 +1,36 @@
+extends layout
+
+block content
+  // TELA 2: LISTAGEM DE VERSOS (A Expansão do Conhecimento)
+  section.molecule-chapter-container
+    header.atom-chapter-header
+      a.atom-btn-back(href="/") 
+        svg(viewBox="0 0 24 24" width="20")
+          path(d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z" fill="currentColor")
+        span Voltar ao Índice
+      
+      h2.atom-title-large Capítulo #{numCapitulo}
+      p.atom-subtitle-meta #{versos.length} Pontos de Luz (Versos) detectados.
+
+    nav.molecule-verse-stack
+      if versos && versos.length > 0
+        each verso in versos
+          a.atom-verse-card(href=`/verso/${numCapitulo}/${verso.verso_numero}`)
+            .verse-identity
+              span.label-v NUM
+              span.value-v= verso.verso_numero
+            
+            .verse-preview
+              // O crawler deve extrair a primeira linha ou o sânscrito original
+              p.text-sanskrit= verso.sanskrito_curto || verso.transliteracao
+              p.text-translation-preview= verso.traducao_curta
+            
+            // O Tilaka sutil indicando que Lucce pode explicar este verso
+            span.atom-indicator-lucce 
+              img(src="/img/tilaka.png" width="14" style="opacity: 0.3")
+      else
+        .atom-empty-state
+          p A frequência deste capítulo ainda não foi sintonizada pelo crawler.
+
+    footer.atom-chapter-footer
+      p.status-text Svadhyaya em progresso...

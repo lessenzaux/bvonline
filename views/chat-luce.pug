@@ -1,0 +1,15 @@
+//- views/includes/chat-lucce.pug
+.molecule-assistant-header
+  .atom-brand-wrapper
+    img(src="/img/tilaka.png" width="20")
+    h2.atom-subtitle Lucce 4.0
+  button#btn-fechar-oraculo.atom-btn-text Recolher
+
+section.molecule-chat-history#chat-display
+  //- Mensagem inicial visceral
+  .atom-chat-bubble.ia-bubble
+    p "A densidade se dissipa. O que o inquieta neste estudo, Arquiteto?"
+
+footer.molecule-chat-input
+  input#chat-input.atom-input-chat(type="text" placeholder="Peça clareza ao Oráculo...")
+  button#btn-enviar-shakti.atom-btn-send Enviar

@@ -1,0 +1,61 @@
+// public/css/modules/_index.scss
+
+.molecule-index-container {
+    padding: 8px 0;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .atom-index-header {
+    margin-bottom: 40px;
+    .atom-subtitle {
+      font-size: 1.4rem;
+      font-weight: 300;
+      letter-spacing: -0.02em;
+      color: $cor-tinta-bic;
+    }
+    .atom-description {
+      font-size: 0.9rem;
+      opacity: 0.5;
+      margin-top: 8px;
+    }
+  }
+  
+  .molecule-chapter-list {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid rgba($cor-tinta-bic, 0.08);
+  
+    .atom-chapter-link {
+      display: flex;
+      align-items: center;
+      padding: 24px 0;
+      text-decoration: none;
+      color: $cor-tinta-bic;
+      border-bottom: 1px solid rgba($cor-tinta-bic, 0.08);
+      transition: background 0.3s ease;
+  
+      &:active {
+        background-color: $cor-ia-fundo;
+      }
+  
+      .cap-number {
+        font-size: 0.8rem;
+        font-weight: 700;
+        opacity: 0.4;
+        margin-right: 20px;
+        font-family: monospace; // Aspecto técnico de código
+      }
+  
+      .cap-title {
+        flex: 1;
+        font-size: 1.1rem;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+      }
+  
+      svg {
+        opacity: 0.3;
+      }
+    }
+  }
